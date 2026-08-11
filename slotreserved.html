@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Slot Is Reserved — TKPhotography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-deep:#1b0620;
+  --bg-mid:#33102c;
+  --glow:#c24a2c;
+  --gold:#e2a53f;
+  --gold-light:#f3cf8e;
+  --cream:#f8f1e6;
+  --grad1:#ffd65a;
+  --grad2:#ff7a45;
+  --grad3:#ec4899;
+  --teal:#2bbfae;
+  --purple-leaf:#8b5cf6;
+  --card-bg:rgba(255,255,255,0.045);
+  --card-border:rgba(226,165,63,0.38);
+  --maxw:720px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:
+    radial-gradient(ellipse 900px 600px at 78% 12%, rgba(194,74,44,0.55), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 15% 60%, rgba(139,92,246,0.18), transparent 65%),
+    linear-gradient(160deg, var(--bg-deep) 0%, var(--bg-mid) 55%, var(--bg-deep) 100%);
+  background-color:var(--bg-deep);
+  color:var(--cream);
+  min-height:100vh;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;position:relative;}
+h1,h2,h3,.font-display{font-family:'Poppins',sans-serif;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+
+/* ---------- decorative leaves ---------- */
+.leaf{position:absolute;pointer-events:none;opacity:0.9;z-index:0;filter:drop-shadow(0 4px 10px rgba(0,0,0,0.25));}
+.leaf svg{display:block;}
+
+/* ---------- header ---------- */
+header{position:relative;z-index:2;padding:34px 0 6px;}
+.brand{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.logo-mark{width:46px;height:46px;position:relative;flex:none;}
+.logo-mark .bracket{position:absolute;inset:0;border:2px solid var(--cream);border-radius:4px;-webkit-mask:
+    linear-gradient(#000 0 0) top left/14px 2px no-repeat,
+    linear-gradient(#000 0 0) top left/2px 14px no-repeat,
+    linear-gradient(#000 0 0) top right/14px 2px no-repeat,
+    linear-gradient(#000 0 0) top right/2px 14px no-repeat,
+    linear-gradient(#000 0 0) bottom left/14px 2px no-repeat,
+    linear-gradient(#000 0 0) bottom left/2px 14px no-repeat,
+    linear-gradient(#000 0 0) bottom right/14px 2px no-repeat,
+    linear-gradient(#000 0 0) bottom right/2px 14px no-repeat;
+  mask:
+    linear-gradient(#000 0 0) top left/14px 2px no-repeat,
+    linear-gradient(#000 0 0) top left/2px 14px no-repeat,
+    linear-gradient(#000 0 0) top right/14px 2px no-repeat,
+    linear-gradient(#000 0 0) top right/2px 14px no-repeat,
+    linear-gradient(#000 0 0) bottom left/14px 2px no-repeat,
+    linear-gradient(#000 0 0) bottom left/2px 14px no-repeat,
+    linear-gradient(#000 0 0) bottom right/14px 2px no-repeat,
+    linear-gradient(#000 0 0) bottom right/2px 14px no-repeat;
+}
+.logo-mark .lens{position:absolute;top:50%;left:50%;width:24px;height:24px;border-radius:50%;
+  transform:translate(-50%,-50%) scale(0.3);
+  background:conic-gradient(from 220deg, var(--grad3), var(--grad2), var(--grad1), var(--purple-leaf), var(--grad3));
+  animation:shutter 1100ms cubic-bezier(.2,1.6,.4,1) 200ms both;
+}
+.logo-mark .lens::after{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--bg-deep);}
+@keyframes shutter{
+  0%{transform:translate(-50%,-50%) scale(0.15) rotate(-40deg);opacity:0;}
+  60%{opacity:1;}
+  100%{transform:translate(-50%,-50%) scale(1) rotate(0deg);opacity:1;}
+}
+.wordmark{font-family:'Poppins',sans-serif;font-weight:800;letter-spacing:0.5px;font-size:17px;color:var(--cream);}
+.eyebrow-tag{margin-left:auto;font-size:9.5px;letter-spacing:1.4px;color:var(--gold-light);text-transform:uppercase;font-weight:600;text-align:right;line-height:1.4;max-width:110px;}
+
+/* ---------- hero / confirmation ---------- */
+.hero{position:relative;z-index:2;padding:44px 0 40px;text-align:center;}
+.confirm-badge{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;
+  background:linear-gradient(135deg,var(--grad1),var(--grad2) 55%,var(--grad3));margin-bottom:26px;
+  box-shadow:0 10px 26px -8px rgba(236,73,153,0.55);}
+.hero h1{font-size:clamp(32px,8vw,46px);font-weight:900;line-height:1.08;letter-spacing:-0.3px;}
+.hero h1 .grad{background:linear-gradient(92deg,var(--grad1),var(--grad2) 45%,var(--grad3) 90%);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+/* ---------- message card ---------- */
+.section{position:relative;z-index:2;padding:10px 0 26px;}
+.card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:22px;padding:32px 26px;position:relative;backdrop-filter:blur(6px);text-align:center;}
+.card p{font-size:16px;line-height:1.65;color:rgba(248,241,230,0.92);margin-bottom:18px;}
+.card p:last-of-type{margin-bottom:0;}
+.card p.lead{font-weight:700;font-size:18px;color:var(--cream);font-family:'Poppins',sans-serif;}
+.card .watch-inbox{display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--gold-light);}
+
+/* ---------- signature ---------- */
+.signature{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:28px;padding-top:26px;border-top:1px solid rgba(226,165,63,0.22);}
+.signature .sig-text{font-family:'Poppins',sans-serif;text-align:left;}
+.signature .headshot{flex:none;width:64px;height:64px;border-radius:50%;overflow:hidden;border:3px solid var(--gold);box-shadow:0 8px 18px -6px rgba(226,165,63,0.5);}
+.signature .headshot img{width:100%;height:100%;object-fit:cover;}
+.signature .sig-text .bye{font-size:14px;color:rgba(248,241,230,0.7);font-weight:500;font-family:'Inter',sans-serif;margin-bottom:2px;}
+.signature .sig-text .name{font-size:22px;font-weight:800;color:var(--cream);font-style:italic;}
+
+/* ---------- footer ---------- */
+footer{position:relative;z-index:2;margin-top:16px;padding:26px 0 50px;border-top:1px solid rgba(226,165,63,0.22);text-align:center;}
+footer .foot-brand{font-family:'Poppins',sans-serif;font-weight:800;font-size:14px;letter-spacing:0.4px;}
+footer .foot-contact{margin-top:10px;font-size:12.5px;color:rgba(248,241,230,0.7);line-height:1.8;}
+footer .foot-contact a{color:var(--gold-light);}
+
+@media (prefers-reduced-motion: reduce){
+  .logo-mark .lens{animation:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- decorative leaves -->
+<div class="leaf" style="top:-10px;left:-30px;width:170px;transform:rotate(200deg);color:var(--teal);">
+  <svg viewBox="0 0 200 60" width="170"><path d="M0,30 Q100,-10 200,15 Q100,55 0,30 Z" fill="currentColor"/></svg>
+</div>
+<div class="leaf" style="top:-6px;right:-48px;width:170px;transform:rotate(-18deg);color:var(--purple-leaf);opacity:0.55;">
+  <svg viewBox="0 0 200 60" width="170"><path d="M0,30 Q100,-8 200,12 Q100,52 0,30 Z" fill="currentColor"/></svg>
+</div>
+<div class="leaf" style="top:60px;right:-55px;width:150px;transform:rotate(35deg);color:var(--grad3);">
+  <svg viewBox="0 0 200 60" width="150"><path d="M0,30 Q100,-8 200,12 Q100,52 0,30 Z" fill="currentColor"/></svg>
+</div>
+<div class="leaf" style="top:40px;left:-50px;width:150px;transform:rotate(-25deg);color:var(--grad2);">
+  <svg viewBox="0 0 200 60" width="150"><path d="M0,30 Q100,-8 200,12 Q100,52 0,30 Z" fill="currentColor"/></svg>
+</div>
+
+<div class="wrap">
+
+  <header>
+    <div class="brand">
+      <div class="logo-mark"><div class="bracket"></div><div class="lens"></div></div>
+      <div class="wordmark">TKPHOTOGRAPHY</div>
+      <div class="eyebrow-tag">Carnival<br>Photography Services</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="confirm-badge">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#20060f" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h1>Your Masquerader Photoshoot Slot Is <span class="grad">Reserved!</span> 🎉</h1>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <p class="lead">Your slot is currently being held for you!</p>
+      <p>To secure your booking, I'll just need your signed contract and deposit payment. Once both are received, your photoshoot slot is officially confirmed and locked in.</p>
+      <p>I'll be in touch via email shortly with your contract and payment link.</p>
+      <p class="watch-inbox">Keep an eye on your inbox! 👀</p>
+
+      <div class="signature">
+        <div class="headshot"><img src="data:image/jpeg;base64,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" alt="Tasha, TKPhotography"></div>
+        <div class="sig-text">
+          <div class="bye">Chat soon,</div>
+          <div class="name">Tasha x</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-brand">TKPHOTOGRAPHY</div>
+    <div class="foot-contact">
+      <a href="mailto:tkphotography.london@gmail.com">tkphotography.london@gmail.com</a><br>
+      <a href="https://instagram.com/tkphotography_196" target="_blank" rel="noopener">@tkphotography_196</a> ·
+      <a href="https://www.tk-photography.co.uk" target="_blank" rel="noopener">tk-photography.co.uk</a>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>
